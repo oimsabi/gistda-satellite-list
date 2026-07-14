@@ -1,0 +1,101 @@
+<mxfile host="app.diagrams.net" agent="Claude" version="24.0.0">
+  <diagram name="Architecture &amp; Data Flow" id="arch">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="Thailand Satellite Viewer — Architecture &amp; Data Flow" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="700" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="srcGroup" value="Google Earth Engine data sources" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="Sentinel-2 SR Harmonized&#10;COPERNICUS/S2_SR_HARMONIZED&#10;→ True Color, NDVI, NDWI, NDMI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mod16" value="MODIS/061/MOD16A2GF&#10;→ MOD16 ET (mm/8-day)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="200" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mod17" value="MODIS/061/MOD17A2HGF&#10;→ MOD17 GPP (kgC/m²/8-day)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="260" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="pml" value="CAS/IGSNRR/PML/V2_v018&#10;→ PML ET (Ec+Es+Ei), GPP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="320" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="derived" value="Derived: WUE = MOD17 GPP ÷ MOD16 ET" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="380" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="stubs" value="Stubbed (not turnkey on EE):&#10;FAO65 · ET:SEBAL · VPM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left;spacingLeft=8;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="430" width="260" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="gen" value="gee/build_layers.py&#10;(re-runnable generator)&#10;&#10;• latest-available composites&#10;• SCL cloud mask&#10;• clip to +15 km buffer&#10;• getMapId() → tile URLs&#10;• inject LAYERS block" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;align=left;spacingLeft=10;verticalAlign=top;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="180" width="260" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="htmlGroup" value="satellite-map/index.html" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="800" y="90" width="320" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="inlineBoundary" value="inline BOUNDARY (Thailand geojson)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="130" width="280" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="layersBlock" value="/* LAYERS_START … LAYERS_END */&#10;const LAYERS = [ tile URL + legend + info ]&#10;(generated / re-injected)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="176" width="280" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="tabs" value="Tab bar — one per layer&#10;(stubs disabled: FAO65/SEBAL/VPM)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="242" width="280" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="Legend + info indicator&#10;(ramp, min/max, unit, formula, dataset, date)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="298" width="280" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="mapui" value="Leaflet map · Google basemaps ·&#10;opacity slider · boundary · coord readout" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="354" width="280" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="expiry" value="⚠ EE tile URLs expire ~4 days → re-run generator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="820" y="410" width="280" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="browser" value="Browser&#10;(double-click index.html — file://)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="240" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="gtiles" value="Google map tiles" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="360" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eetiles" value="EE tile server (raster tiles)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="410" width="220" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="reorgTitle" value="Repository reorganization (two projects split)" style="text;html=1;fontSize=15;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="580" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sat" value="satellite-map/&#10;  index.html&#10;  boundary/  (Thailand.geojson/.shp/.shx)&#10;  gee/build_layers.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;align=left;spacingLeft=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="620" width="320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="price" value="price-list/&#10;  web/  (app.js, data.js, index.html, styles.css)&#10;  data/  (gistda_price_list.json, csv/)&#10;  extract_data.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacingLeft=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="400" y="620" width="340" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="rootshared" value="root: requirements.txt · README.md · .venv (shared)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="770" width="700" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#333333;" edge="1" parent="1" source="srcGroup" target="gen">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="injects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#d79b00;fontSize=11;" edge="1" parent="1" source="gen" target="layersBlock">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="opens" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#333333;fontSize=11;" edge="1" parent="1" source="htmlGroup" target="browser">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="Google tiles" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6c8ebf;dashed=1;fontSize=10;" edge="1" parent="1" source="browser" target="gtiles">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="raster tiles" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6c8ebf;dashed=1;fontSize=10;" edge="1" parent="1" source="browser" target="eetiles">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

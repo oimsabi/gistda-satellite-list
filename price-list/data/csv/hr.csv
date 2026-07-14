@@ -1,0 +1,12 @@
+﻿category,satellite,mode,resolution_label,resolution_m,band,polarization,price_archive,price_tasking,price_unit,min_order_th,min_order_en,notes_th,notes_en
+hr,QuickBird,,60 cm,0.6,,,700.0,,บาท/ตร.กม. (THB/km²),คลัง 25 ตร.กม. / สั่งถ่าย 100 ตร.กม.,Archive 25 km² / Tasking 100 km²,,
+hr,GaoFen-7,,65 cm,0.65,,,400.0,700.0,บาท/ตร.กม. (THB/km²),คลัง 25 ตร.กม. / สั่งถ่าย 100 ตร.กม.,Archive 25 km² / Tasking 100 km²,,
+hr,Jilin,,75 cm,0.75,,,300.0,600.0,บาท/ตร.กม. (THB/km²),คลัง 25 ตร.กม. / สั่งถ่าย 100 ตร.กม.,Archive 25 km² / Tasking 100 km²,,
+hr,DailyVision,,75 cm,0.75,,,300.0,600.0,บาท/ตร.กม. (THB/km²),คลัง 25 ตร.กม. / สั่งถ่าย 100 ตร.กม.,Archive 25 km² / Tasking 100 km²,,
+hr,GaoFen-2,,80 cm,0.8,,,300.0,400.0,บาท/ตร.กม. (THB/km²),คลัง 25 ตร.กม. / สั่งถ่าย 100 ตร.กม.,Archive 25 km² / Tasking 100 km²,,
+hr,IKONOS,,1 m,1.0,,,400.0,,บาท/ตร.กม. (THB/km²),คลัง 25 ตร.กม. / สั่งถ่าย 100 ตร.กม.,Archive 25 km² / Tasking 100 km²,,
+hr,Video Constellation,,1 m,1.0,,,142500.0,285000.0,บาท/30 วินาที (THB/30 sec),,,ถ่ายภาพเคลื่อนไหว (วิดีโอ) และภาพกลางคืน • วิดีโอแต่ละช่วงจำกัดความยาว 30 วินาที,Captures video and night imagery • Each video clip limited to 30 seconds
+hr,Night Imaging,,1 m,1.0,,,800.0,1400.0,บาท/ตร.กม. (THB/km²),100 ตร.กม. (ทั้งคลังและสั่งถ่าย),100 km² (archive and tasking),ถ่ายวิดีโอและภาพกลางคืน • ความกว้างแนวถ่ายภาพอย่างน้อย 5 กม.,Video and night imaging capable • Swath width at least 5 km
+hr,SPOT-6,,1.5 m,1.5,,,190.0,230.0,บาท/ตร.กม. (THB/km²),คลัง 100 ตร.กม. / สั่งถ่าย 500 ตร.กม.,Archive 100 km² / Tasking 500 km²,,
+hr,SPOT-7,,1.5 m,1.5,,,190.0,230.0,บาท/ตร.กม. (THB/km²),คลัง 100 ตร.กม. / สั่งถ่าย 500 ตร.กม.,Archive 100 km² / Tasking 500 km²,,
+hr,ไทยโชต (Thaichote),,2 m,2.0,,,700.0,6500.0,บาท/ภาพ (THB/scene),,,ราคาที่ปรับ Orthorectification แล้ว 910 บาท/ภาพ,Orthorectified product: 910 THB/scene

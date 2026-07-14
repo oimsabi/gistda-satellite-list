@@ -1,0 +1,6 @@
+﻿category,satellite,mode,resolution_label,resolution_m,band,polarization,price_archive,price_tasking,price_unit,min_order_th,min_order_en,notes_th,notes_en
+medium,LANDSAT-5,,30 m,30.0,7 bands,,150.0,,บาท/ภาพ (THB/scene),,,Level 1T • คิดเฉพาะค่าดำเนินการผลิตข้อมูลจากคลังข้อมูล,"Level 1T • Processing fee only, produced from archive"
+medium,LANDSAT-7,,30 m,30.0,8 bands,,150.0,,บาท/ภาพ (THB/scene),,,Level 1T • คิดเฉพาะค่าดำเนินการผลิตข้อมูลจากคลังข้อมูล,"Level 1T • Processing fee only, produced from archive"
+medium,LANDSAT-8,,30 m,30.0,11 bands,,150.0,,บาท/ภาพ (THB/scene),,,Level 1T • หากให้ สทอภ. ดาวน์โหลด คิดค่าดำเนินการ 150 บาท/ภาพ,Level 1T • Download service by GISTDA: 150 THB/scene
+medium,LANDSAT-9,,30 m,30.0,11 bands,,150.0,,บาท/ภาพ (THB/scene),,,Level 1T • หากให้ สทอภ. ดาวน์โหลด คิดค่าดำเนินการ 150 บาท/ภาพ,Level 1T • Download service by GISTDA: 150 THB/scene
+medium,PLANETSCOPE,Access+Download,3 m,3.0,,,180.0,240.0,บาท/ตร.กม./ปี (THB/km²/yr),100 ตร.กม.,100 km²,"ราคา = คลัง 180 / การติดตาม (Monitoring) 240 • ระยะเวลาสัญญา 1 ปี • เข้าดูและดาวน์โหลดผ่าน Planet Explorer, Planet API, Desktop GIS","Prices = Archive 180 / Monitoring 240 • 1-year contract • Access via Planet Explorer, Planet API, Desktop GIS"
